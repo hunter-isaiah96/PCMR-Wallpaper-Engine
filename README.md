@@ -11,7 +11,7 @@ To change ['behold', 'true gloriousness', the main text color, and the color of 
 const configuration = {
   top_text: 'behold',
   bottom_text: 'true gloriousness.',
-  color: '#FF3333',
+  main_color: '#FF3333',
   text_color: '#fff',
   blur_amount: 5
 };
