@@ -12,8 +12,7 @@ const configuration = {
   top_text: 'behold',
   bottom_text: 'true gloriousness.',
   main_color: '#FF3333',
-  text_color: '#fff',
-  blur_amount: 5
+  text_color: '#fff'
 };
 ```
 
