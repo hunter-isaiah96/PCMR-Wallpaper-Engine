@@ -1,60 +1,42 @@
 <html>
   <head>
     <style>
-
-      * {
-        cursor: default; 
-      }
-
-      text {
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      html, body {
-        height: 100%;
-      }
-
-      body {
-        position: relative;
-        margin: 0;
-        overflow: hidden;
-      }
-
-      .background-image-holder {
-        height: 100%;  
-        position: relative;
-        overflow: hidden;
-        transform: scale(1.1);
-      }
-
-      .background-image {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background: url('./images/background.jpg') no-repeat center center;
-        background-size: cover;
-      }
-
-      .foreground {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-      }
-
-      .foreground svg {
-        position: absolute;
-      }
-
+    * {
+      cursor: default;
+    }
+    text {
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      -khtml-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    body {
+      overflow: hidden;
+    }
+    .background-image-holder {
+      height: 100%;
+      transform: scale(1.1);
+    }
+    .background-image {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: url('./images/background.jpg') no-repeat center;
+    }
+    .foreground {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .foreground svg {
+      position: absolute;
+    }
     </style>
   </head>
   <body>
@@ -67,8 +49,37 @@
       </div>
     </div>
     <script src="./js/moon.js"></script>
-    <script src="./js/jquery.js"></script>
-    <script src="./js/jquery.backgroundMove.js"></script>
-    <script src="./js/app.js"></script>
+    <script>
+      // Config
+      const configuration = {
+        top_text: 'behold',
+        bottom_text: 'true gloriousness.',
+        color: '#FF3333',
+        text_color: '#fff',
+        blur_amount: 5
+      };
+
+      // Main Application
+
+      const moon = new Moon({
+        el: "#app",
+        data: configuration
+      });
+
+      let movementStrength = 50;
+      let height = movementStrength / screen.height;
+      let width = movementStrength / screen.width;
+
+      let background = document.getElementsByClassName('background-image')[0];
+      let foreground = document.getElementsByClassName('foreground')[0].getElementsByTagName('svg')[0]
+      background.style.filter = `blur(${moon.$data.blur_amount}px)`;
+
+      document.addEventListener('mousemove', function(e){
+        let pageX = width * (e.pageX - (screen.width / 2)) * -1;
+        let pageY = height * (e.pageY - (screen.height / 2)) * -1;
+        background.style.transform = `translate(${pageX}px, ${pageY}px)`
+        foreground.style.transform = `translate(${pageX * 4}px, ${pageY * 4}px)`
+      }, false)
+    </script>
   </body>
 </html>
