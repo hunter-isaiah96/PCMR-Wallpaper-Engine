@@ -1,0 +1,45 @@
+{
+    "file" : "index.html",
+    "general" : 
+    {
+        "properties" : 
+        {
+			"logo_color" : 
+			{
+				"order" : 1,
+				"text" : "Logo Color",
+				"type" : "color",
+				"value" : "1 0.5 0"
+			},
+			"text_color" : 
+			{
+				"order" : 2,
+				"text" : "Text Color",
+				"type" : "color",
+				"value" : "1 1 1"
+			},
+			"top_text" : 
+            {
+				"order" : 3,
+                "text" : "Top Text",
+                "type" : "textinput",
+                "value" : "behold"
+            },
+			"bottom_text" : 
+            {
+				"order" : 4,
+                "text" : "Bottom Text",
+                "type" : "textinput",
+                "value" : "true gloriousness."
+            },
+			"image": {
+				"order" : 5,
+				"text" : "Image",
+				"type" : "file",
+				"value" : ""
+			}
+        }
+    },
+    "title" : "PCMasterRace - Behold True Glory",
+    "type" : "web"
+}
