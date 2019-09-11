@@ -1,7 +1,3 @@
-# Why did I make this?
-
-Honestly I was tired and needed to find something to keep me from falling asleep... I made it to about 7pm after being up since 10:00pm the previous day ... yea, us web developers don't really sleep all that much, it's true.
-
 # Personalization
 
 To change ['behold', 'true gloriousness', the main text color, and the color of PC and the separator], open index.html in any text editor and scroll to the bottom where you will see a variable called configuration and change each one accordingly.
